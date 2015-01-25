@@ -2,6 +2,8 @@
 
 This data set has the average by activity and individual, of 66 measurements calculated from signals taken from the accelerometer and gyroscope of the Samsung Galaxy S II smartphone, which was used by 30 individuals performing 6 types of activities during a series of sliding windows of time.
 
+This tidy data set is a result of appliying the run_analysis() funtion in the run_analysis.R script. 
+
 A full description of the data sets used to make this summarized data set, and the source data is available at: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones   
