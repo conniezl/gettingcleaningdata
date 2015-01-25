@@ -1,6 +1,6 @@
 ## Code Book -  Human Activity Recognition Using Smartphones
 
-This data set has the average of 66 measurements calculated from signals taken from the accelerometer and gyroscope of the Samsung Galaxy S II smartphone, which was used by 30 individuals performing 6 types of activities during a series of sliding windows of time.
+This data set has the average by activity and individual, of 66 measurements calculated from signals taken from the accelerometer and gyroscope of the Samsung Galaxy S II smartphone, which was used by 30 individuals performing 6 types of activities during a series of sliding windows of time.
 
 A full description of the data sets used to make this summarized data set, and the source data is available at: 
 
