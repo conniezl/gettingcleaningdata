@@ -6,7 +6,7 @@ A full description of the data sets used to make this summarized data set, and t
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones   
 
-The following is detailed description of this data set.
+The following is a detailed description of this data set.
 
 ### activityType : 
 * Description: Activities performed.
