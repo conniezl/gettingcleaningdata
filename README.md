@@ -10,7 +10,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 The following are the steps to reproduce the generation of the tidy data set:
 
-### Download the Human Activity Recognition database files from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and copy the full data in the working folder. The structure of the directory (i.e. folders and subfolders and files) must be preserved.
+#### Download the Human Activity Recognition database files from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and copy the full data in the working folder. The structure of the directory (i.e. folders and subfolders and files) must be preserved.
 
 The following are the files in the database:
 The set is divided into training and test sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
