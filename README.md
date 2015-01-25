@@ -82,7 +82,9 @@ Usage:
 
 Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertial Signals folders were not used as they are not required.
 
-#### 3. Prepare Activities data set for training and test. The output of this step is a data frame where the training and test sequence of activities are appended and the activities are labeled. The column names are assigned a descriptive name. The order of the original activities data set is preserved.   
+### How the function run_analysis() work?
+
+#### 1. Prepare Activities data set for training and test. The output of this step is a data frame where the training and test sequence of activities are appended and the activities are labeled. The column names are assigned a descriptive name. The order of the original activities data set is preserved.   
   
 
 * Read activity labels list
@@ -120,7 +122,7 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
   colnames(labeledActivities)[2]<- "activityType"
   
   
-#### 4. Prepare Subjects data set for Training and Test. The output of this step is a data frame where the training and test sequence of subjects are appended. The column name is assigned a descriptive name.  The order of the original subjects data set is preserved.
+#### 2. Prepare Subjects data set for Training and Test. The output of this step is a data frame where the training and test sequence of subjects are appended. The column name is assigned a descriptive name.  The order of the original subjects data set is preserved.
   
 * Get the subjects that performed the sequence of activities observed, for test and training.
 * Append training and test rows together using rbind
@@ -135,7 +137,7 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
   colnames(subjects)[1] <- "subject"   
   
   
-#### 5. Prepare Features Vector. The output of this step is a data frame where the training and test sequence of features are appended. Only the mean() and std() features are selected (only 66 features). The column names are assigned a descriptive name and ilegal characters are removed.  The order of the original subjects data set is preserved.
+#### 3. Prepare Features Vector. The output of this step is a data frame where the training and test sequence of features are appended. Only the mean() and std() features are selected (only 66 features). The column names are assigned a descriptive name and ilegal characters are removed.  The order of the original subjects data set is preserved.
 
 
   
@@ -200,7 +202,7 @@ Std: for standard deviation
 
 
   
-#### 6.  Now that subjects, labeled activities, and features data sets are prepared they will be merged into ONE data set. Merged by row names, so that the correct records are matched. The output of this step is a data frame where the Activities labeled, subjects, and features (reduced to 66) are merged together by row name.The order of the original data sets is preserved.
+#### 4.  Now that subjects, labeled activities, and features data sets are prepared they will be merged into ONE data set. Merged by row names, so that the correct records are matched. The output of this step is a data frame where the Activities labeled, subjects, and features (reduced to 66) are merged together by row name.The order of the original data sets is preserved.
 
 * Merge subjects and Activities
 * Merge the resulting dataset with features
@@ -216,7 +218,7 @@ Std: for standard deviation
   humanActivity <- humanActivity[,! (names(humanActivity) %in% drops)]
   
   
-#### 7. FINAL STEP: Create a Tidy Data Set with the average of each variable for each activity and each subject.
+#### 5. FINAL STEP: Create a Tidy Data Set with the average of each variable for each activity and each subject.
 
 
   
