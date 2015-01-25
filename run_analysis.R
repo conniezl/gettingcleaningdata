@@ -109,7 +109,7 @@ run_analysis <- function () {
   colnames(featuresVectorReduced) <- featuresMeanAndStd$V2
   
   
-  # 5.  Now that Subjects, Activities, and features data sets are prepared they will be merged into ONE final data set. 
+  # 4.  Now that Subjects, Activities, and features data sets are prepared they will be merged into ONE final data set. 
   #     Merged by row names, so that the correct records are matched.
   #
   #     - Merge subjects and Activities
@@ -123,7 +123,7 @@ run_analysis <- function () {
   humanActivity <- humanActivity[,! (names(humanActivity) %in% drops)]
   
   
-  # 6. FINAL STEP: Create a Tidy Data Set with the average of each variable for each activity and each subject.
+  # 5. FINAL STEP: Create a Tidy Data Set with the average of each variable for each activity and each subject.
   #   - reshape (melt) the dataset from step 5 to have the measurements in rows instead of columns. 
   #     Tne new dataset would have columns: ActivityType, subject, variable, and value, where the variable and value columns 
   #     will have each of the measurements and its value . This creates a narrow, tall data set instead. 
