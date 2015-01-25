@@ -8,10 +8,11 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 The following is a detailed description of this data set.
 
+
 ### activityType : 
 * Description: Activities performed.
 * Record Type: factor
-* Values:  WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+* Values:  WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYI
 
 
 ### subject:
@@ -20,34 +21,40 @@ The following is a detailed description of this data set.
 * Values: 1 to 30 
 
 ### timeBodyAccMeanX:
-* Description: The average by individual and activity, of the mean of the Body Acceleration time domain signals on axis x during a sliding window time period.  
+* Description: The average by individual and activity, of the mean of the Body Acceleration time domain signals on axis x during a sliding window time period. 
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g' 
 
 ### timeBodyAccMeanY  
 * Description: The average by individual and activity, of the mean of the Body Acceleration time domain signals on axis y during a sliding window time period.
 * Record Type: numeric
-* Values:  between -1 and 1
+* Values: between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeBodyAccMeanZ    
 * Description: The average by individual and activity, of the mean of the Body Acceleration time domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeGravityAccMeanX  
 * Description: The average by individual and activity, of the mean of the Gravity Acceleration time domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeGravityAccMeanY  
 * Description: The average by individual and activity, of the mean of the Gravity Acceleration time domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeGravityAccMeanZ 
 * Description: The average by individual and activity, of the mean of the Gravity Acceleration time domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeBodyAccJerkMeanX 
 * Description: The average by individual and activity, of the mean of the Jerk signals derived from the Body Acceleration time domain signals on axis x during a sliding window time period.
@@ -68,6 +75,7 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the mean of the Body Gyroscope time domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### timeBodyGyroMeanY    
 * Description: The average by individual and activity, of the mean of the Body Gyroscope time domain signals on axis y during a sliding window time period.
@@ -78,6 +86,7 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the mean of the Body Gyroscope time domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### timeBodyGyroJerkMeanX 
 * Description: The average by individual and activity, of the mean of the Jerk signals derived from the Body Gyroscope time domain signals on axis x during a sliding window time period.
@@ -123,16 +132,19 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the mean of the Body Acceleration frequency domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### freqBodyAccMeanY    
 * Description: The average by individual and activity, of the mean of the Body Acceleration frequency domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### freqBodyAccMeanZ   
 * Description: The average by individual and activity, of the mean of the Body Acceleration frequency domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### freqBodyAccJerkMeanX   
 * Description: The average by individual and activity, of the mean of the Jerk signals derived from the Body Acceleration frequency domain signals on axis x during a sliding window time period.
@@ -153,16 +165,19 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the mean of the Body Gyroscope frequency domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### freqBodyGyroMeanY      
 * Description: The average by individual and activity, of the mean of the Body Gyroscope frequency domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### freqBodyGyroMeanZ   
 * Description: The average by individual and activity, of the mean of the Body Gyroscope frequency domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### freqBodyAccMagMean     
 * Description: The average by individual and activity, of the mean of the Magnitude of the Body Acceleration frequency domain signals during a sliding window time period.
@@ -188,31 +203,37 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the standard deviation of the Body Acceleration time domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeBodyAccStdY      
 * Description: The average by individual and activity, of the standard deviation of the Body Acceleration time domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeBodyAccStdZ       
 * Description: The average by individual and activity, of the standard deviation of the Body Acceleration time domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeGravityAccStdX  
 * Description: The average by individual and activity, of the standard deviation of the Gravity Acceleration time domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeGravityAccStdY   
 * Description: The average by individual and activity, of the standard deviation of the Gravity Acceleration time domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeGravityAccStdZ  
 * Description: The average by individual and activity, of the standard deviation of the Gravity Acceleration time domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### timeBodyAccJerkStdX   
 * Description: The average by individual and activity, of the standard deviation of the Jerk signals derived from the Body Acceleration time domain signals on axis x during a sliding window time period.
@@ -233,16 +254,19 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the standard deviation of the Body Gyroscope time domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### timeBodyGyroStdY      
 * Description: The average by individual and activity, of the standard deviation of the Body Gyroscope time domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### timeBodyGyroStdZ       
 * Description: The average by individual and activity, of the standard deviation of the Body Gyroscope time domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### timeBodyGyroJerkStdX   
 * Description: The average by individual and activity, of the standard deviation of the Jerk signals derived from the Body Gyroscope time domain signals on axis x during a sliding window time period.
@@ -288,16 +312,19 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the standard deviation of the Body Acceleration frequency domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### freqBodyAccStdY       
 * Description: The average by individual and activity, of the standard deviation of the Body Acceleration frequency domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### freqBodyAccStdZ       
 * Description: The average by individual and activity, of the standard deviation of the Body Acceleration frequency domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: The standard gravity units 'g'
 
 ### freqBodyAccJerkStdX   
 * Description: The average by individual and activity, of the standard deviation of the Jerk signals derived from the Body Acceleration frequency domain signals on axis x during a sliding window time period.
@@ -318,16 +345,19 @@ The following is a detailed description of this data set.
 * Description: The average by individual and activity, of the standard deviation of the Body Gyroscope frequency domain signals on axis x during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### freqBodyGyroStdY       
 * Description: The average by individual and activity, of the standard deviation of the Body Gyroscope frequency domain signals on axis y during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### freqBodyGyroStdZ     
 * Description: The average by individual and activity, of the standard deviation of the Body Gyroscope frequency domain signals on axis z during a sliding window time period.
 * Record Type: numeric
 * Values:  between -1 and 1
+* Units: radians/second
 
 ### freqBodyAccMagStd     
 * Description: The average by individual and activity, of the Standard deviation of the Magnitude of the Body Acceleration frequency domain signals during a sliding window time period.
