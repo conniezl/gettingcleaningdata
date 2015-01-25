@@ -92,7 +92,9 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
 * Get the sequence of activities observed for test and training, and append training and test rows together using rbind. Each record represents the activity for one sliding window. 
 
   trainActivities <- read.table("./UCI HAR Dataset/train/y_train.txt")
+
   testActivities <- read.table("./UCI HAR Dataset/test/y_test.txt") 
+
   activities <- rbind(trainActivities,testActivities)
   
 * Add a new column with the row.names to remember the original order of the records before merging (merge, which is done in the next step, changes the order of the records)
@@ -113,7 +115,8 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
 
 * Assign new descriptive variable names 
                                                                                               
-  colnames(labeledActivities)[1]<- "activity"                                                  
+  colnames(labeledActivities)[1]<- "activity" 
+                                                 
   colnames(labeledActivities)[2]<- "activityType"
   
   
@@ -124,7 +127,9 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
 * Assign a descriptive variable name 
   
   trainSubjects <- read.table("./UCI HAR Dataset/train/subject_train.txt")
+
   testSubjects <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+
   subjects <- rbind(trainSubjects, testSubjects)
   
   colnames(subjects)[1] <- "subject"   
@@ -138,54 +143,76 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
   
   features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)                        
   selectedfeaturesMean <- features[grep("mean()", features$V2, fixed=TRUE), ]
+
   selectedfeaturesStd <- features[grep("std()", features$V2, fixed=TRUE), ]
+
   featuresMeanAndStd <- rbind(selectedfeaturesMean,selectedfeaturesStd)
+
   
 * Format mean and sdt features so they can be used as descriptive column names (variables) (i.e. remove punctuation symbols, standardize names and convention, etc.)
   
-  featuresMeanAndStd$V2 <- gsub("[[:punct:]]", "", featuresMeanAndStd$V2) 
+  featuresMeanAndStd$V2 <- gsub("[[:punct:]]", "", featuresMeanAndStd$V2)
+ 
   featuresMeanAndStd$V2 <- gsub("mean", "Mean", featuresMeanAndStd$V2)
+
   featuresMeanAndStd$V2 <- gsub("std", "Std", featuresMeanAndStd$V2)
+
   featuresMeanAndStd$V2 <- gsub("BodyBody", "Body", featuresMeanAndStd$V2)
+
   featuresMeanAndStd$V2 <- gsub("^t", "time", featuresMeanAndStd$V2)
+
   featuresMeanAndStd$V2 <- gsub("^f", "freq", featuresMeanAndStd$V2)
   
   
 * Read features vectors for training and test and append them together
   
   trainFeaturesVector <- read.table("./UCI HAR Dataset/train/X_train.txt")
+
   testFeaturesVector <- read.table("./UCI HAR Dataset/test/X_test.txt") 
+
   featuresVector <- rbind(trainFeaturesVector, testFeaturesVector)
+
   
 * Extract only the mean() and std() features
   
   featuresVectorReduced <- featuresVector[,featuresMeanAndStd$V1]
+
   
 * Add descriptive names to the columns using the previously formatted variable names 
   
   colnames(featuresVectorReduced) <- featuresMeanAndStd$V2
+
   
 Note: The following conventions were used for abbreviation of variable names in the features data frame. 
 Complete words not used in order to preserve the variable names length as small and readable as possible.
 
 time:for a time domain feature
+
 freq: for a frequency domain feature
+
 Acc: for Accelerometer
+
 Gyro: for Gyroscope
+
 Mag: for Magnitude
+
 Std: for standard deviation
 
+
   
-#### 6.  Now that Subjects, Activities, and features data sets are prepared they will be merged into ONE final data set. Merged by row names, so that the correct records are matched. The output of this step is a data frame where the Activities labeled, subjects, and features (reduced to 66) are merged together by row name.The order of the original data sets is preserved.
+#### 6.  Now that subjects, labeled activities, and features data sets are prepared they will be merged into ONE data set. Merged by row names, so that the correct records are matched. The output of this step is a data frame where the Activities labeled, subjects, and features (reduced to 66) are merged together by row name.The order of the original data sets is preserved.
 
 * Merge subjects and Activities
 * Merge the resulting dataset with features
 * Eliminate columns rn and activity. Keep activity type, subject and the 66 measurements
   
   humanActivity <- merge(labeledActivities, subjects, by.x = "rn", by.y="row.names", all.x= TRUE, sort = FALSE)
+
   humanActivity <- merge(humanActivity, featuresVectorReduced, by.x = "rn", by.y="row.names", all.x= TRUE, sort = FALSE)
+
   
   drops <- c("rn","activity")
+
   humanActivity <- humanActivity[,! (names(humanActivity) %in% drops)]
   
   
@@ -199,15 +226,18 @@ Std: for standard deviation
 
   humanActivityMelt <- melt(humanActivity,id=c("activityType","subject"), measure.vars=c(names(humanActivity[3:68])))
 
+
 * dcast the resulting dataset to put back the measurements as columns and calculate at the same time the mean by activityType, subject, and measurement
 
 
   humanActivityTidy <- dcast(humanActivityMelt, activityType + subject ~ variable, mean )
 
+
 * Write the resulting Data set to a file in the working directory, and return the data frame
   
 
   write.table(humanActivityTidy,file = "./tidyDataSet.txt", row.names = FALSE)
+
   humanActivityTidy
  
  
