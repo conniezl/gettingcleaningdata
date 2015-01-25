@@ -10,7 +10,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 The following are the steps to reproduce the generation of the tidy data set:
 
-#### Download the Human Activity Recognition database files from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and copy the full data in the working folder. The structure of the directory (i.e. folders and subfolders and files) must be preserved.
+#### 1. Download the Human Activity Recognition database files from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip, and copy the full data in the working folder. The structure of the directory (i.e. folders and subfolders and files) must be preserved.
 
 The following are the files in the database:
 The set is divided into training and test sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
@@ -31,7 +31,6 @@ Sequence of subjects that performed the activities for each sliding window in th
 Data of 561 features for each sliding window 
 
 * ./UCI HAR Dataset/test/y_test: 
-
 Sequence of Activities performed for each sliding window in the test data set 
 
 * ./UCI HAR Dataset/test/Inertial Signals/body_acc_x_test: 
@@ -61,29 +60,12 @@ Raw signals of total acceleration in the y axis for each sliding window.
 * ./UCI HAR Dataset/test/Inertial Signals/total_acc_z_test: 
 Raw signals of total acceleration in the z axis for each sliding window.
 
-* ./UCI HAR Dataset/train/subject_train: 
-Sequence of subjects that performed the activities for each sliding window in the test data set
+The definitions, files and folder structure are the same for the train data set so they are not included here.
 
 
-* ./UCI HAR Dataset/train/X_train: 
-Data of 561 features for each sliding window.
+Train and Test datasets will be merged together.
 
-* ./UCI HAR Dataset/train/y_train: 
-Sequence of Activities performed for each sliding window in the test data set.
-
-* ./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train: raw signals of body acceleration in the x axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/body_acc_y_train: raw signals of body acceleration in the y axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/body_acc_z_train: raw signals of body acceleration in the z axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train: raw signals of body angular velocity from the gyroscope in the x axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train: raw signals of body angular velocity from the gyroscope in the y axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train: raw signals of body angular velocity from the gyroscope in the z axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/total_acc_x_train: raw signals of total acceleration in the x axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train: raw signals of total acceleration in the y axis for each sliding window
-* ./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train: raw signals of total acceleration in the z axis for each sliding window
-
-This datasets will be merged together in one dataset.
-
-### Load the script and run the run_analysis() function
+#### 2. Load the script and run the run_analysis() function
 
 Requisites:
 * The script run_analysis.R must reside in the working directory
@@ -100,7 +82,7 @@ Usage:
 
 Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertial Signals folders were not used as they are not required.
 
-### 1. Prepare Activities data set for training and test. The output of this step is a data frame where the training and test sequence of activities are appended and the activities are labeled. The column names are assigned a descriptive name. The order of the original activities data set is preserved.   
+#### 3. Prepare Activities data set for training and test. The output of this step is a data frame where the training and test sequence of activities are appended and the activities are labeled. The column names are assigned a descriptive name. The order of the original activities data set is preserved.   
   
 
 * Read activity labels list
@@ -135,7 +117,7 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
   colnames(labeledActivities)[2]<- "activityType"
   
   
-### 2. Prepare Subjects data set for Training and Test. The output of this step is a data frame where the training and test sequence of subjects are appended. The column name is assigned a descriptive name.  The order of the original subjects data set is preserved.
+#### 4. Prepare Subjects data set for Training and Test. The output of this step is a data frame where the training and test sequence of subjects are appended. The column name is assigned a descriptive name.  The order of the original subjects data set is preserved.
   
 * Get the subjects that performed the sequence of activities observed, for test and training.
 * Append training and test rows together using rbind
@@ -148,7 +130,7 @@ Note:  The 9 signals files in the ./test/Inertial Signals and ./training/Inertia
   colnames(subjects)[1] <- "subject"   
   
   
-### 3. Prepare Features Vector. The output of this step is a data frame where the training and test sequence of features are appended. Only the mean() and std() features are selected (only 66 features). The column names are assigned a descriptive name and ilegal characters are removed.  The order of the original subjects data set is preserved.
+#### 5. Prepare Features Vector. The output of this step is a data frame where the training and test sequence of features are appended. Only the mean() and std() features are selected (only 66 features). The column names are assigned a descriptive name and ilegal characters are removed.  The order of the original subjects data set is preserved.
 
 
   
@@ -194,7 +176,7 @@ Mag: for Magnitude
 Std: for standard deviation
 
   
-### 4.  Now that Subjects, Activities, and features data sets are prepared they will be merged into ONE final data set. Merged by row names, so that the correct records are matched. The output of this step is a data frame where the Activities labeled, subjects, and features (reduced to 66) are merged together by row name.The order of the original data sets is preserved.
+#### 6.  Now that Subjects, Activities, and features data sets are prepared they will be merged into ONE final data set. Merged by row names, so that the correct records are matched. The output of this step is a data frame where the Activities labeled, subjects, and features (reduced to 66) are merged together by row name.The order of the original data sets is preserved.
 
 * Merge subjects and Activities
 * Merge the resulting dataset with features
@@ -207,7 +189,7 @@ Std: for standard deviation
   humanActivity <- humanActivity[,! (names(humanActivity) %in% drops)]
   
   
-### 5. FINAL STEP: Create a Tidy Data Set with the average of each variable for each activity and each subject.
+#### 7. FINAL STEP: Create a Tidy Data Set with the average of each variable for each activity and each subject.
 
 
   
@@ -230,7 +212,7 @@ Std: for standard deviation
  
  
   
-### Additional Notes: 
+#### Additional Notes: 
 
 * The variables in the resulting tidy data set have not been renamed to represent the "MeanOf" the variable (for example rename timeBodyAccMeanX as MeanOftimeBodyAccMeanX), however the definition states that these values in fact are summarized by the mean function. This modification will be done in the next version of the script.
  
