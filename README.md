@@ -15,36 +15,71 @@ The following are the steps to reproduce the generation of the tidy data set:
 The following are the files in the database:
 The set is divided into training and test sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-./UCI HAR Dataset/activity_labels.txt: Has a list of activity labels to link the activity id to the activity label (name).
-./UCI HAR Dataset/features.txt: For each sliding window of time where signals were measured, 561 features were calculated. This is a list of these signals and their id number.
-./UCI HAR Dataset/features_info.txt: This file describes how the 561 features were calculated.
-./UCI HAR Dataset/README.txt: Describes the data set
+* ./UCI HAR Dataset/activity_labels.txt: 
+Has a list of activity labels to link the activity id to the activity label (name).
+* ./UCI HAR Dataset/features.txt: 
+For each sliding window of time where signals were measured, 561 features were calculated. This is a list of these signals and their id number.
+* ./UCI HAR Dataset/features_info.txt: 
+This file describes how the 561 features were calculated.
+* ./UCI HAR Dataset/README.txt: 
+Describes the data set
 
-./UCI HAR Dataset/test/subject_test: sequence of subjects that performed the activities for each sliding window in the test data set 
-./UCI HAR Dataset/test/X_test: data of 561 features for each sliding window 
-./UCI HAR Dataset/test/y_test: sequence of Activities performed for each sliding window in the test data set 
-./UCI HAR Dataset/test/Inertial Signals/body_acc_x_test: raw signals of body acceleration in the x axis for each sliding window  
-./UCI HAR Dataset/test/Inertial Signals/body_acc_y_test: raw signals of body acceleration in the y axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/body_acc_z_test: raw signals of body acceleration in the z axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/body_gyro_x_test: raw signals of body angular velocity from the gyroscope in the x axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/body_gyro_y_test: raw signals of body angular velocity from the gyroscope in the y axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/body_gyro_z_test: raw signals of body angular velocity from the gyroscope in the z axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/total_acc_x_test: raw signals of total acceleration in the x axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/total_acc_y_test: raw signals of total acceleration in the y axis for each sliding window
-./UCI HAR Dataset/test/Inertial Signals/total_acc_z_test: raw signals of total acceleration in the z axis for each sliding window
+* ./UCI HAR Dataset/test/subject_test: 
+Sequence of subjects that performed the activities for each sliding window in the test data set 
 
-./UCI HAR Dataset/train/subject_train: sequence of subjects that performed the activities for each sliding window in the test data set
-./UCI HAR Dataset/train/X_train: data of 561 features for each sliding window
-./UCI HAR Dataset/train/y_train: sequence of Activities performed for each sliding window in the test data set 
-./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train: raw signals of body acceleration in the x axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/body_acc_y_train: raw signals of body acceleration in the y axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/body_acc_z_train: raw signals of body acceleration in the z axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train: raw signals of body angular velocity from the gyroscope in the x axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train: raw signals of body angular velocity from the gyroscope in the y axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train: raw signals of body angular velocity from the gyroscope in the z axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/total_acc_x_train: raw signals of total acceleration in the x axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train: raw signals of total acceleration in the y axis for each sliding window
-./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train: raw signals of total acceleration in the z axis for each sliding window
+* ./UCI HAR Dataset/test/X_test: 
+Data of 561 features for each sliding window 
+
+* ./UCI HAR Dataset/test/y_test: 
+
+Sequence of Activities performed for each sliding window in the test data set 
+
+* ./UCI HAR Dataset/test/Inertial Signals/body_acc_x_test: 
+Raw signals of body acceleration in the x axis for each sliding window  
+
+* ./UCI HAR Dataset/test/Inertial Signals/body_acc_y_test: 
+Raw signals of body acceleration in the y axis for each sliding window
+
+* ./UCI HAR Dataset/test/Inertial Signals/body_acc_z_test: 
+Raw signals of body acceleration in the z axis for each sliding window
+
+* ./UCI HAR Dataset/test/Inertial Signals/body_gyro_x_test: 
+Raw signals of body angular velocity from the gyroscope in the x axis for each sliding window.
+
+* ./UCI HAR Dataset/test/Inertial Signals/body_gyro_y_test: 
+Raw signals of body angular velocity from the gyroscope in the y axis for each sliding window.
+
+* ./UCI HAR Dataset/test/Inertial Signals/body_gyro_z_test: 
+Raw signals of body angular velocity from the gyroscope in the z axis for each sliding window.
+
+* ./UCI HAR Dataset/test/Inertial Signals/total_acc_x_test: 
+Raw signals of total acceleration in the x axis for each sliding window.
+
+* ./UCI HAR Dataset/test/Inertial Signals/total_acc_y_test: 
+Raw signals of total acceleration in the y axis for each sliding window.
+
+* ./UCI HAR Dataset/test/Inertial Signals/total_acc_z_test: 
+Raw signals of total acceleration in the z axis for each sliding window.
+
+* ./UCI HAR Dataset/train/subject_train: 
+Sequence of subjects that performed the activities for each sliding window in the test data set
+
+
+* ./UCI HAR Dataset/train/X_train: 
+Data of 561 features for each sliding window.
+
+* ./UCI HAR Dataset/train/y_train: 
+Sequence of Activities performed for each sliding window in the test data set.
+
+* ./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train: raw signals of body acceleration in the x axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/body_acc_y_train: raw signals of body acceleration in the y axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/body_acc_z_train: raw signals of body acceleration in the z axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train: raw signals of body angular velocity from the gyroscope in the x axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train: raw signals of body angular velocity from the gyroscope in the y axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train: raw signals of body angular velocity from the gyroscope in the z axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/total_acc_x_train: raw signals of total acceleration in the x axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train: raw signals of total acceleration in the y axis for each sliding window
+* ./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train: raw signals of total acceleration in the z axis for each sliding window
 
 This datasets will be merged together in one dataset.
 
