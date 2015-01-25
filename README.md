@@ -222,7 +222,7 @@ Std: for standard deviation
 
 
   
-* Reshape (melt) the dataset from step 4 to have the measurements in rows instead of columns. Tne new dataset would have columns: ActivityType, subject, variable, and value, where the variable and value columns will have each of the measurements name and its value . This creates a narrow, tall data set instead. 
+* Reshape (melt) the dataset from step 4 to have the measurements in rows instead of columns. The new dataset would have columns: ActivityType, subject, variable, and value, where the variable and value columns will have each of the measurements name and its value . This creates a narrow, tall data set instead. 
 
   require (reshape2)
 
